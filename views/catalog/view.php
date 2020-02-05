@@ -17,28 +17,6 @@
         $pagination = new Pagination($total, 1, SHOW_BY_DEFAULT, '&page=');
         $catalogItems = getCatalogItemById($_GET['category']);
     }
-    
-//     SELECT mov.id, 
-//     mov.name_book, 
-//     GROUP_CONCAT(name_author SEPARATOR ", ") AS authors_captions 
-// FROM books AS mov 
-//   LEFT JOIN links_ba AS lin 
-// ON ( mov.id = lin.book_id ) 
-//   LEFT JOIN authors AS gen 
-// ON ( lin.author_id = gen.id ) 
-// GROUP BY id
-
-
-// SELECT book.id, 
-//        book.name_book, 
-//        GROUP_CONCAT(name_genre SEPARATOR ", ") AS genres_captions 
-// FROM books AS book 
-//      LEFT JOIN links_bg AS lin 
-// ON ( book.id = lin.book_id ) 
-//      LEFT JOIN genres AS gen 
-// ON ( lin.genre_id = gen.id ) 
-// GROUP BY id
-    
 ?>
 
 <?php include ROOT . '/../loyouts/header.php';?>
@@ -47,7 +25,7 @@
     <ul>
         <?php foreach($genresList as $genresItem):?>
             <li>
-                <?php if($genresItem['id'] == $catalog):?> 
+                <?php if($genresItem['id'] == $_GET['category']):?> 
                     <a href="/views/catalog/view.php?category=<?php echo $genresItem['id'];?>" style="font-weight: 600;">             
                     &#xab;<?php echo $genresItem['name_genre'];?>&#xbb;
                     </a>
@@ -65,7 +43,7 @@
         <div class="book-container"> 
 
         <?php foreach($genresList as $genresItem):?>
-            <?php if($genresItem['id'] == $catalog):?>  
+            <?php if($genresItem['id'] == $_GET['category']):?>  
                 <h2><?php echo $genresItem["name_genre"]?></h2>
             <?php endif;?> 
         <?php endforeach;?>

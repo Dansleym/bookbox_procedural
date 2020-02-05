@@ -26,16 +26,6 @@ const SHOW_BY_DEFAULT = 4;
                                 GROUP BY id                             
                                 LIMIT ' . SHOW_BY_DEFAULT
                                . ' OFFSET ' . $offset);
-
-
-        // $result = $db->query('SELECT books.id, books.name_book, books.description, books.price, 
-        //                         books.image, books.author_id, GROUP_CONCAT(authors.name_author SEPARATOR ", ") 
-        //                         AS name_author FROM books 
-        //                         INNER JOIN authors ON books.author_id = authors.id
-        //                         WHERE books.genre_id='.$id.'
-        //                         GROUP BY name_book 
-        //                         LIMIT ' . SHOW_BY_DEFAULT
-        //                         . ' OFFSET ' . $offset);
             
         $catalogItems = array();
         $i = 0;
