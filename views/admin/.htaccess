@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Admin panel"
+AuthUserFile C:\Users\Dansleym\Desktop\OSPanel_Min\domains\localhost\bookbox\views\admin\.htpasswd
+Require valid-user
