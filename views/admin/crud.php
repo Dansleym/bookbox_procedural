@@ -37,7 +37,7 @@ require_once('../../data/Db.php');
             $sql3 = "DELETE FROM books WHERE id = $id";
             $db->exec($sql3);
 
-            echo "Record deleted successfully";
+            echo "Book deleted successfully";
         } catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
@@ -104,7 +104,6 @@ require_once('../../data/Db.php');
                 }
             }
 
-            echo "<br>Author inserted successfully<br>";
         } catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
@@ -119,7 +118,6 @@ require_once('../../data/Db.php');
             VALUES ('$id', '$genre_id')";
             $db->exec($sql5);
 
-            echo "<br>Genre inserted successfully<br>";
         } catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }

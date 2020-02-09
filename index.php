@@ -7,7 +7,6 @@
     $genresList = getGenresList();
 ?>
 
-
 <?php include ROOT . '/views/loyouts/header.php';?>
 
 <div class="rightside">

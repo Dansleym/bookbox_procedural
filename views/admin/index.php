@@ -24,11 +24,13 @@
 <body>
     <a href="/" style="position: absolute; color: black; font-size: 20px; left: 200px;">На главную</a>
     <a href="/views/admin/addbook.php" style="position: absolute; color: black; font-size: 20px;right: 200px;">Добавить книгу</a>
-
-    <div style="display:flex; justify-content: center; padding-bottom: 100px;padding-top: 50px;">
+    <h3 style="margin: 0 auto;width: 200px;color: red;">Админ панель</h3>
+    <div style="display:flex; justify-content: center; padding-bottom: 100px;">
+        
         <form action=""  method="POST">
             <ul style="padding: 0;">
                 <li style="display: flex; border-bottom: 2px solid black; width: 850px;">
+                    <div style="width: 26px;"><a href=""></a></div>
                     <div style="width: 200px; padding: 10px;">Автор:</div>
                     <div style="width: 200px; padding: 10px;">Книга:</div>
                     <div style="width: 100px; padding: 10px;">Цена:</div>
@@ -37,11 +39,11 @@
                     <div style="width: 80px;"><a href=""></a></div>
                 </li>
 
-                <?php $i = 0;?>
-                <?php foreach($booksList as $booksItem): $i++;?>
-
-                    <?php if($i%2 == 0):?>        
-                        <li style="display: flex; width: 850px;background: #eaeaea;">
+                <div class="adminlist">
+                <?php foreach($booksList as $booksItem):?>
+                    
+                        <li style="display: flex; width: 850px;">
+                            <?php echo '<img style="width: 24px; height: 45px;margin-left: 2px;" src="../../assets/img/'.$booksItem["image"].'">' ;?>
                             <div style="width: 200px; padding: 10px;"><?php echo $booksItem['name_author'];?></div>
                             <div style="width: 200px; padding: 10px;"><?php echo $booksItem['name_book'];?></div>
                             <div style="width: 100px; padding: 10px;"><?php echo $booksItem['price'];?>$</div>
@@ -58,29 +60,10 @@
                                     удалить
                                 </button>
                             </div>
-                        </li> 
-                    <?php else:?> 
-                        <li style="display: flex; width: 850px;background: white;">
-                            <div style="width: 200px; padding: 10px;"><?php echo $booksItem['name_author'];?></div>
-                            <div style="width: 200px; padding: 10px;"><?php echo $booksItem['name_book'];?></div>
-                            <div style="width: 100px; padding: 10px;"><?php echo $booksItem['price'];?>$</div>
-                            <div style="width: 50px; padding: 10px;"><?php echo $booksItem['id'];?></div>
-                            <div title='update' style="width: 140px; padding: 10px;">
-                                <a href="/views/admin/updbook.php?id=<?php echo $booksItem['id'];?>" style="text-decoration: none;">
-                                    редактировать
-                                </a>
-                            </div>
-                            <div title='delete' style="padding: 10px;">
-                                <button data-role="delete" data-id="<?php echo $booksItem['id'];?>" data-name="<?php echo $booksItem['name_book'];?>"
-                                        style="cursor: pointer;border: none; background-color: transparent;color: red;"
-                                        type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                                    удалить
-                                </button>
-                            </div> 
-                        </li> 
-                    <?php endif;?>
+                        </li>   
                     
-                <?php endforeach;?>    
+                <?php endforeach;?>
+                </div>    
             </ul>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

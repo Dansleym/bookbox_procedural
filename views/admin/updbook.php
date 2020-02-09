@@ -27,6 +27,7 @@
 
 <a href="/" style="color: black; font-size: 20px; margin-left: 200px;">На главную</a>
 <a href="/views/admin/" style="position: absolute; color: black; font-size: 20px;right: 200px;">Админ панель</a>
+<h3 style="margin: 0 auto;width: 200px;color: red;">Обновление данных</h3>
 <div style="display:flex; justify-content: center;">
 
     <form action="" method="POST" enctype="multipart/form-data" style="font-family: Courier monospace;font-size: 1.2em;display: flex; flex-direction: column; width: 50%;">

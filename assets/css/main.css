@@ -211,3 +211,9 @@ h3 {
   padding: 0;
   color: white;
 }
+.adminlist li {
+  background: white;
+}
+.adminlist li:nth-child(2n) {
+  background: #eaeaea;
+}

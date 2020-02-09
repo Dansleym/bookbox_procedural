@@ -12,4 +12,4 @@
 
 3)Создайте базу данных с именем "book_ctlg" затем импортируйте в нее файл book_ctlg.sql (данный файл прилагается к проекту).
 
-4)Проект доступен на https://github.com/Dansleym/bookbox.git
+4)Проект доступен на https://github.com/Dansleym/bookbox_procedural.git

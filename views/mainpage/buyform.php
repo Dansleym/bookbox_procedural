@@ -67,19 +67,14 @@ form input{
             <h2>Оформление заказа</h2>
             <div class="book" style="width: 500px;">
                 <div class="book-img" style="width: 30%;">
-                    <a href="/bookbox/books/<?php echo $booksItem["id"]?>">
+                    <a href="/views/books/?book_id=<?php echo $booksItem["id"]?>">
                         <?php echo '<img src="../../assets/img/'.$booksItem["image"].'" title="'.$booksItem["name_book"].'">' ;?>
                     </a>
                 </div>
                 <div class="book-info">
-
-                    <a href="/bookbox/author/<?php echo $booksItem["author_id"]?>" style="text-decoration: none; color: black;">
-                        <h3 class="book-author"><?php echo $booksItem['name_author'];?></h3>
-                    </a>
-
+                    <h3 class="book-author"><?php echo $booksItem['name_author'];?></h3>
                     <h3 class="book-name"><?php echo $booksItem['name_book'];?></h3>
-                    <p class="book-price"><?php echo $booksItem['price'];?>$</p>
-               
+                    <p class="book-price"><?php echo $booksItem['price'];?>$</p>              
                 </div>
             </div>
 
