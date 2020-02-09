@@ -13,14 +13,14 @@
   <div class="App">
       <div class="header">
 
-        <h1><a href="/bookbox">Book<span>Box</span></a></h1>
+        <h1><a href="/">Book<span>Box</span></a></h1>
         <div style="position: absolute; right: 10px; color: white; font-size: 20px;margin-left: 100px;">
-          <a href="/bookbox">На главную</a> / 
-          <a href="/views/admin/mainadmin.php">Админ панель</a>
+          <a href="/">На главную</a> / 
+          <a href="/views/admin/">Админ панель</a>
         </div>
 
         <ul>
-          <li><a href="/bookbox">Главная</a></li>
+          <li><a href="/">Главная</a></li>
           <li><a href="#">Жанры</a></li>
           <li><a href="#">Авторы</a></li>
           <li><a href="#">О нас</a></li>

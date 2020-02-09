@@ -1,8 +1,6 @@
 <?php
 
-return array(
-    'host' => 'localhost',
-    'dbname' => 'book_ctlg',
-    'user' => 'root',
-    'password' => '',
-);
+   const HOST = 'localhost';
+   const DBNAME = 'book_ctlg';
+   const USER = 'root';
+   const PASSWORD = '';

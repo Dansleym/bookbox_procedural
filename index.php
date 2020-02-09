@@ -13,7 +13,7 @@
 <div class="rightside">
     <ul>
         <?php foreach($genresList as $genresItem):?>
-            <li><a href="/views/catalog/view.php?category=<?php echo $genresItem['id'];?>&page=1"><?php echo $genresItem['name_genre'];?></a></li>
+            <li><a href="/views/catalog/?category=<?php echo $genresItem['id'];?>"><?php echo $genresItem['name_genre'];?></a></li>
         <?php endforeach;?>
     </ul>
 </div>

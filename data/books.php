@@ -117,13 +117,18 @@
         if ($id) {
             $db = getConnection();
 
-            $result = $db->query('SELECT books.id, books.name_book, books.description, books.price, books.genre_id,
-                                 books.image, books.author_id, authors.name_author, authors.information 
-                                 FROM books INNER JOIN authors ON books.author_id=authors.id 
-                                 WHERE books.id='. $id);
+            $result = $db->query('SELECT book.id, book.name_book, book.description, book.price,
+                                    book.image, GROUP_CONCAT(name_author SEPARATOR ", ") AS name_author 
+                                    FROM books as book 
+                                    LEFT JOIN links_ba AS lin 
+                                    ON ( book.id = lin.book_id ) 
+                                    LEFT JOIN authors AS auth 
+                                    ON ( lin.author_id = auth.id ) 
+                                    WHERE book.id = '.$id.'
+                                    GROUP BY id');    
 
             $booksItem = $result->fetch();
-    
+
             return $booksItem;
         }
     }
@@ -137,7 +142,7 @@
         $id = intval($id);
 
         if ($id) {
-            $db = Db::getConnection();
+            $db = getConnection();
 
             $result = $db->query('SELECT * from authors WHERE id='. $id);
 
@@ -177,9 +182,16 @@
         $id = intval($id);
 
         if ($id) {
-            $db = Db::getConnection();
+            $db = getConnection();
 
-            $result = $db->query('SELECT * from books WHERE author_id='. $id);
+            $result = $db->query('SELECT book.id, book.name_book, book.description, book.price, book.image, 
+                                auth.name_author
+                                FROM books as book 
+                                LEFT JOIN links_ba AS lin 
+                                ON ( book.id = lin.book_id ) 
+                                LEFT JOIN authors AS auth 
+                                ON ( lin.author_id = auth.id )            
+                                WHERE lin.author_id = '. $id);
 
             $booksList = array();
             $i = 0;
@@ -188,8 +200,7 @@
                 $booksList[$i]['name_book'] = $row['name_book'];
                 $booksList[$i]['description'] = $row['description'];
                 $booksList[$i]['price'] = $row['price'];
-                $booksList[$i]['author_id'] = $row['author_id'];
-                $booksList[$i]['genre_id'] = $row['genre_id'];
+                $booksList[$i]['name_author'] = $row['name_author'];
                 $booksList[$i]['image'] = $row['image'];
                 $i++;
             }
