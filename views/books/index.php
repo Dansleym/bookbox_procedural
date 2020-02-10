@@ -34,7 +34,7 @@
                     <h3 class="book-name"><?php echo $booksItem['name_book'];?></h3>
                     <p class="book-price"><?php echo $booksItem['price'];?>$</p>
                     <br>
-                    <a href="/views/mainpage/buyform.php?id=<?php echo $booksItem["id"]?>" class="buy-button">КУПИТЬ</a>
+                    <a href="/views/buyform?id=<?php echo $booksItem["id"]?>" class="buy-button">КУПИТЬ</a>
                   
                 </div>
             </div>

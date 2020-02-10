@@ -198,6 +198,10 @@ h3 {
   margin-top: 30px;
 }
 
+.buy-button:hover {
+  background: red;
+}
+
 .footer {
   grid-area: b;
   background-color: black;
